@@ -1916,7 +1916,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      name: '',
+      price: '',
+      total: '',
+      modelOpen: false
+    };
+  },
+  methods: {
+    addProduct: function addProduct() {
+      axios.post('/products', {
+        name: this.name,
+        price: this.price,
+        total: this.total
+      }).then(function () {
+        window.location.href = '/';
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -19634,23 +19680,180 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "button",
+      {
+        staticClass:
+          "mt-3 w-full sm:w-auto py-2 px-4 sm:mt-0 text-sm capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700",
+        on: {
+          click: function($event) {
+            _vm.modelOpen = true
+          }
+        }
+      },
+      [_vm._v("\n        Add New Product\n    ")]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.modelOpen,
+            expression: "modelOpen"
+          }
+        ],
+        staticClass: "fixed z-10 inset-0 overflow-y-auto"
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+          },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticClass:
+                  "hidden sm:inline-block sm:align-middle sm:h-screen",
+                attrs: { "aria-hidden": "true" }
+              },
+              [_vm._v("​")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "px-5 py-3 inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full",
+                attrs: {
+                  role: "dialog",
+                  "aria-modal": "true",
+                  "aria-labelledby": "modal-headline"
+                }
+              },
+              [
+                _c("h2", { staticClass: "text-gray-800 text-xl font-medium" }, [
+                  _vm._v("Add New Product")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.name,
+                      expression: "name"
+                    }
+                  ],
+                  staticClass: "form-input w-full mt-3",
+                  attrs: { type: "text", placeholder: "name" },
+                  domProps: { value: _vm.name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.name = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.price,
+                      expression: "price"
+                    }
+                  ],
+                  staticClass: "form-input w-full mt-3",
+                  attrs: { type: "text", placeholder: "price" },
+                  domProps: { value: _vm.price },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.price = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.total,
+                      expression: "total"
+                    }
+                  ],
+                  staticClass: "form-input w-full mt-3",
+                  attrs: { type: "text", placeholder: "total" },
+                  domProps: { value: _vm.total },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.total = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "mt-3 w-full py-2 px-4 text-sm capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700",
+                    on: { click: _vm.addProduct }
+                  },
+                  [_vm._v("\n                    Add\n                ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "mt-3 w-full py-2 px-4 text-sm capitalize tracking-wide bg-red-500 text-white font-medium rounded hover:bg-red-400 focus:outline-none focus:bg-red-400",
+                    on: {
+                      click: function($event) {
+                        _vm.modelOpen = false
+                      }
+                    }
+                  },
+                  [_vm._v("\n                    Cancel\n                ")]
+                )
+              ]
+            )
+          ]
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c(
-        "button",
-        {
-          staticClass:
-            "mt-3 w-full sm:w-auto py-2 px-4 sm:mt-0 text-sm capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
-        },
-        [_vm._v("\n        Add New Product\n    ")]
-      )
-    ])
+    return _c(
+      "div",
+      {
+        staticClass: "fixed inset-0 transition-opacity",
+        attrs: { "aria-hidden": "true" }
+      },
+      [_c("div", { staticClass: "absolute inset-0 bg-gray-500 opacity-75" })]
+    )
   }
 ]
 render._withStripped = true

@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="container mx-auto px-6 py-16">
-        <h1 class="flex items-center justify-center space-x-4 text-gray-800">
+    <div class="bg-gray-800 py-4">
+        <h1 class="flex items-center justify-center space-x-4 text-white">
             <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
                 <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
@@ -10,7 +10,9 @@
             </svg>
             <span class="text-3xl font-semibold">Store CMS</span>
         </h1>
-
+    </div>
+    
+    <div class="container mx-auto px-6 py-16">
         <products-component class="mt-8" :products="{{ json_encode($products) }}"></products-component>
     </div>
 @endsection
