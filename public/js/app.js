@@ -19716,7 +19716,7 @@ var render = function() {
           }
         }
       },
-      [_vm._v("\n        Add New Product\n    ")]
+      [_vm._v("\n        اضافة منتج جديد\n    ")]
     ),
     _vm._v(" "),
     _c(
@@ -19765,7 +19765,7 @@ var render = function() {
               },
               [
                 _c("h2", { staticClass: "text-gray-800 text-xl font-medium" }, [
-                  _vm._v("Add New Product")
+                  _vm._v("اضافة منتج جديد")
                 ]),
                 _vm._v(" "),
                 _c("input", {
@@ -19778,7 +19778,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-input w-full mt-3",
-                  attrs: { type: "text", placeholder: "name" },
+                  attrs: { type: "text", placeholder: "اسم المنتج" },
                   domProps: { value: _vm.name },
                   on: {
                     input: function($event) {
@@ -19800,7 +19800,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-input w-full mt-3",
-                  attrs: { type: "text", placeholder: "price" },
+                  attrs: { type: "text", placeholder: "سعر القطعة" },
                   domProps: { value: _vm.price },
                   on: {
                     input: function($event) {
@@ -19822,7 +19822,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-input w-full mt-3",
-                  attrs: { type: "text", placeholder: "total" },
+                  attrs: { type: "text", placeholder: "الكمية" },
                   domProps: { value: _vm.total },
                   on: {
                     input: function($event) {
@@ -19841,7 +19841,7 @@ var render = function() {
                       "mt-3 w-full py-2 px-4 text-sm capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700",
                     on: { click: _vm.addProduct }
                   },
-                  [_vm._v("\n                    Add\n                ")]
+                  [_vm._v("\n                    اضافة\n                ")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -19855,7 +19855,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                    Cancel\n                ")]
+                  [_vm._v("\n                    الغاء\n                ")]
                 )
               ]
             )
@@ -19916,7 +19916,7 @@ var render = function() {
             }
           ],
           staticClass: "form-input w-full sm:max-w-sm",
-          attrs: { type: "text", placeholder: "Search..." },
+          attrs: { type: "text", placeholder: "بحث..." },
           domProps: { value: _vm.keyword },
           on: {
             input: function($event) {
@@ -19955,7 +19955,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "flex justify-between items-center text-gray-700 mt-3"
+                  "flex justify-between items-center font-nunito text-gray-700 mt-3"
               },
               [
                 _c("span", [_vm._v(_vm._s(product.total))]),

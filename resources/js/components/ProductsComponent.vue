@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="sm:flex justify-between items-center">
-            <input v-model="keyword" class="form-input w-full sm:max-w-sm" type="text" placeholder="Search...">
+            <input v-model="keyword" class="form-input w-full sm:max-w-sm" type="text" placeholder="بحث...">
 
             <new-product></new-product>
         </div>
@@ -10,7 +10,7 @@
             <div class="px-5 py-3 w-full bg-white rounded shadow-sm" v-for="product in productsList" :key="product.id">
                 <h3 class="text-gray-800 text-lg capitalize">{{ product.name }}</h3>
 
-                <div class="flex justify-between items-center text-gray-700 mt-3">
+                <div class="flex justify-between items-center font-nunito text-gray-700 mt-3">
                     <span>{{ product.total }}</span>
                     <span>${{ product.price }}</span>
                 </div>

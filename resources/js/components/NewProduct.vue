@@ -1,7 +1,7 @@
 <template>
     <div>
         <button @click="modelOpen = true" class="mt-3 w-full sm:w-auto py-2 px-4 sm:mt-0 text-sm capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
-            Add New Product
+            اضافة منتج جديد
         </button>
 
         <div v-show="modelOpen" class="fixed z-10 inset-0 overflow-y-auto">
@@ -13,18 +13,18 @@
                 <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
                 <div class="px-5 py-3 inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-                    <h2 class="text-gray-800 text-xl font-medium">Add New Product</h2>
+                    <h2 class="text-gray-800 text-xl font-medium">اضافة منتج جديد</h2>
 
-                    <input v-model="name" class="form-input w-full mt-3" type="text" placeholder="name">
-                    <input v-model="price" class="form-input w-full mt-3" type="text" placeholder="price">
-                    <input v-model="total" class="form-input w-full mt-3" type="text" placeholder="total">
+                    <input v-model="name" class="form-input w-full mt-3" type="text" placeholder="اسم المنتج">
+                    <input v-model="price" class="form-input w-full mt-3" type="text" placeholder="سعر القطعة">
+                    <input v-model="total" class="form-input w-full mt-3" type="text" placeholder="الكمية">
                     
                     <button @click="addProduct" class="mt-3 w-full py-2 px-4 text-sm capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
-                        Add
+                        اضافة
                     </button>
 
                     <button @click="modelOpen = false" class="mt-3 w-full py-2 px-4 text-sm capitalize tracking-wide bg-red-500 text-white font-medium rounded hover:bg-red-400 focus:outline-none focus:bg-red-400">
-                        Cancel
+                        الغاء
                     </button>
                 </div>
             </div>

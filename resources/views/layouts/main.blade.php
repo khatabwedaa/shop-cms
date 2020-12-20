@@ -14,11 +14,12 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Tajawal:300,400,500,700&display=swap&subset=arabic" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
-<body class="bg-gray-200 font-nunito">
+<body class="bg-gray-200 font-tajawal" dir="rtl">
 <div id="app">
     <main>
         @yield('content')
