@@ -50,9 +50,7 @@
                         price: this.price,
                         total: this.total
                     })
-                    .then(() => {
-                       window.location.href = '/';
-                    });
+                    .then(() => { window.location.reload() });
             }
         }
     }

@@ -1958,7 +1958,7 @@ __webpack_require__.r(__webpack_exports__);
         price: this.price,
         total: this.total
       }).then(function () {
-        window.location.href = '/';
+        window.location.reload();
       });
     }
   }
@@ -1976,6 +1976,20 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NewProduct__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NewProduct */ "./resources/js/components/NewProduct.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2026,6 +2040,16 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         return _this.productsList = response.data;
       })["catch"](function (error) {});
+    },
+    destroy: function destroy(id) {
+      axios["delete"]('/products/' + id).then(function () {
+        window.location.reload();
+      });
+    },
+    decrement: function decrement(id) {
+      axios.post('/products/' + id + '/sold').then(function () {
+        window.location.reload();
+      });
     }
   }
 });
@@ -19923,7 +19947,7 @@ var render = function() {
             staticClass: "px-5 py-3 w-full bg-white rounded shadow-sm"
           },
           [
-            _c("h3", { staticClass: "text-gray-800 text-lg" }, [
+            _c("h3", { staticClass: "text-gray-800 text-lg capitalize" }, [
               _vm._v(_vm._s(product.name))
             ]),
             _vm._v(" "),
@@ -19938,7 +19962,85 @@ var render = function() {
                 _vm._v(" "),
                 _c("span", [_vm._v("$" + _vm._s(product.price))])
               ]
-            )
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex items-center justify-between" }, [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "mt-3 py-2 px-4 text-sm capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700",
+                  on: {
+                    click: function($event) {
+                      return _vm.decrement(product.id)
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "h-5 w-5",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        stroke: "currentColor"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          d:
+                            "M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+                        }
+                      })
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "mt-3 py-2 px-4 text-sm capitalize tracking-wide bg-red-500 text-white font-medium rounded hover:bg-red-400 focus:outline-none focus:bg-red-400",
+                  on: {
+                    click: function($event) {
+                      return _vm.destroy(product.id)
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "h-5 w-5",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        stroke: "currentColor"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          d:
+                            "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        }
+                      })
+                    ]
+                  )
+                ]
+              )
+            ])
           ]
         )
       }),

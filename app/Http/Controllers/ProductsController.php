@@ -19,4 +19,11 @@ class ProductsController extends Controller
 
         return response(201);
     }
+
+    public function destory(Product $product)
+    {
+        $product->delete();
+
+        return response(200);
+    }
 }
