@@ -13,7 +13,7 @@
                 <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
                 <div class="px-5 py-3 inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-                    <h2 class="text-gray-800 text-xl font-medium">اضافة منتج جديد</h2>
+                    <h2 class="text-gray-800 text-xl font-medium text-right">اضافة منتج جديد</h2>
 
                     <input v-model="name" class="form-input w-full mt-3" type="text" placeholder="اسم المنتج">
                     <input v-model="price" class="form-input w-full mt-3" type="text" placeholder="سعر القطعة">

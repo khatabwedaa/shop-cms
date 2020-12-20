@@ -19822,9 +19822,13 @@ var render = function() {
                 }
               },
               [
-                _c("h2", { staticClass: "text-gray-800 text-xl font-medium" }, [
-                  _vm._v("اضافة منتج جديد")
-                ]),
+                _c(
+                  "h2",
+                  {
+                    staticClass: "text-gray-800 text-xl font-medium text-right"
+                  },
+                  [_vm._v("اضافة منتج جديد")]
+                ),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
