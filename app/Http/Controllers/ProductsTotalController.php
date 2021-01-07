@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Report;
 
 class ProductsTotalController extends Controller
 {
@@ -10,6 +11,15 @@ class ProductsTotalController extends Controller
     {
         $product->decrement('total');
 
-        return response(200);
+        Report::create([
+            'name' => $product->name,
+            'price' => $product->price
+        ]);
+
+        if ($product->total == 0) {
+            $product->delete();
+        }
+
+        return response("Update Total Quantity", 200);
     }
 }

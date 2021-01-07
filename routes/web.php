@@ -8,4 +8,6 @@ Route::delete('/products/{product}', 'ProductsController@destory');
 
 Route::post('/products/{product}/sold', 'ProductsTotalController@update');
 
+Route::get('/reports', 'ReportsController@index');
+
 Route::get('/search', 'SearchController@index');

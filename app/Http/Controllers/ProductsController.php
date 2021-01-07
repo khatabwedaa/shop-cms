@@ -15,15 +15,21 @@ class ProductsController extends Controller
 
     public function store()
     {
-        Product::create(request(['name', 'price', 'total']));
+        $data = request() ->validate([
+            'name' => 'required|unique:products|max:255',
+            'price' => 'required',
+            'total' => 'required'
+        ]);
 
-        return response(201);
+        Product::create($data);
+
+        return response("Added Product", 201);
     }
 
     public function destory(Product $product)
     {
         $product->delete();
 
-        return response(200);
+        return response("Deleted Product", 200);
     }
 }
