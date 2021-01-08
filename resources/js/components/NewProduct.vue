@@ -16,7 +16,8 @@
                     <h2 class="text-gray-800 text-xl font-medium text-right">اضافة منتج جديد</h2>
 
                     <input v-model="name" class="form-input w-full mt-3" type="text" placeholder="اسم المنتج">
-                    <input v-model="price" class="form-input w-full mt-3" type="text" placeholder="سعر القطعة">
+                    <input v-model="start_price" class="form-input w-full mt-3" type="text" placeholder="سعر القطعة">
+                    <input v-model="sale_price" class="form-input w-full mt-3" type="text" placeholder="سعر بيع القطعة">
                     <input v-model="total" class="form-input w-full mt-3" type="text" placeholder="الكمية">
                     
                     <button @click="addProduct" class="mt-3 w-full py-2 px-4 text-sm capitalize tracking-wide bg-gray-800 text-white font-medium rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
@@ -37,7 +38,8 @@
         data() {
             return {
                 name: '',
-                price: '',
+                start_price: '',
+                sale_price: '',
                 total: '',
                 modelOpen: false
             }
@@ -47,7 +49,8 @@
             addProduct() {
                 axios.post('/products' , { 
                         name: this.name,
-                        price: this.price,
+                        start_price: this.start_price,
+                        sale_price: this.sale_price,
                         total: this.total
                     })
                     .then(() => { window.location.reload() });

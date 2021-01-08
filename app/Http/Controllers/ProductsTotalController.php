@@ -13,7 +13,7 @@ class ProductsTotalController extends Controller
 
         Report::create([
             'name' => $product->name,
-            'price' => $product->price
+            'price' => $product->sale_price
         ]);
 
         if ($product->total == 0) {

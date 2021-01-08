@@ -20,6 +20,9 @@
                                         سعر القطعة
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-white uppercase tracking-wider">
+                                        سعر بيع القطعة
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-white uppercase tracking-wider">
                                         الكمية
                                     </th>
                                     <th scope="col" class="relative px-6 py-3">
@@ -33,7 +36,11 @@
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <h3 class="text-gray-700 text-lg capitalize text-right">${{ product.price }}</h3> 
+                                        <h3 class="text-gray-700 text-lg capitalize text-right">${{ product.start_price }}</h3> 
+                                    </td>
+
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <h3 class="text-gray-700 text-lg capitalize text-right">${{ product.sale_price }}</h3> 
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-nowrap">

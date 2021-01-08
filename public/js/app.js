@@ -1942,11 +1942,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       name: '',
-      price: '',
+      start_price: '',
+      sale_price: '',
       total: '',
       modelOpen: false
     };
@@ -1955,7 +1957,8 @@ __webpack_require__.r(__webpack_exports__);
     addProduct: function addProduct() {
       axios.post('/products', {
         name: this.name,
-        price: this.price,
+        start_price: this.start_price,
+        sale_price: this.sale_price,
         total: this.total
       }).then(function () {
         window.location.reload();
@@ -1976,25 +1979,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NewProduct__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NewProduct */ "./resources/js/components/NewProduct.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -19861,19 +19845,41 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.price,
-                      expression: "price"
+                      value: _vm.start_price,
+                      expression: "start_price"
                     }
                   ],
                   staticClass: "form-input w-full mt-3",
                   attrs: { type: "text", placeholder: "سعر القطعة" },
-                  domProps: { value: _vm.price },
+                  domProps: { value: _vm.start_price },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.price = $event.target.value
+                      _vm.start_price = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.sale_price,
+                      expression: "sale_price"
+                    }
+                  ],
+                  staticClass: "form-input w-full mt-3",
+                  attrs: { type: "text", placeholder: "سعر بيع القطعة" },
+                  domProps: { value: _vm.sale_price },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.sale_price = $event.target.value
                     }
                   }
                 }),
@@ -20051,7 +20057,22 @@ var render = function() {
                                   staticClass:
                                     "text-gray-700 text-lg capitalize text-right"
                                 },
-                                [_vm._v("$" + _vm._s(product.price))]
+                                [_vm._v("$" + _vm._s(product.start_price))]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            { staticClass: "px-6 py-4 whitespace-nowrap" },
+                            [
+                              _c(
+                                "h3",
+                                {
+                                  staticClass:
+                                    "text-gray-700 text-lg capitalize text-right"
+                                },
+                                [_vm._v("$" + _vm._s(product.sale_price))]
                               )
                             ]
                           ),
@@ -20207,6 +20228,20 @@ var staticRenderFns = [
           [
             _vm._v(
               "\n                                    سعر القطعة\n                                "
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 text-right text-xs font-medium text-white uppercase tracking-wider",
+            attrs: { scope: "col" }
+          },
+          [
+            _vm._v(
+              "\n                                    سعر بيع القطعة\n                                "
             )
           ]
         ),
