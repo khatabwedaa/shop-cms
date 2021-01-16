@@ -23,7 +23,8 @@ class ProductFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-            'price' => $this->faker->numberBetween(20, 220),
+            'start_price' => $this->faker->numberBetween(20, 220),
+            'sale_price' => $this->faker->numberBetween(20, 220),
             'total' => $this->faker->numberBetween(200, 500)
         ];
     }
