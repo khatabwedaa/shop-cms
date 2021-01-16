@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Imports\ProductsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductsController extends Controller
 {
@@ -32,5 +34,12 @@ class ProductsController extends Controller
         $product->delete();
 
         return response("Deleted Product", 200);
+    }
+
+    public function import()
+    {
+        Excel::import(new ProductsImport, storage_path('products.xlsx'));
+        
+        return redirect('/')->with('success', 'All good!');
     }
 }
